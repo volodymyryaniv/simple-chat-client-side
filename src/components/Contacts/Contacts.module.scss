@@ -1,0 +1,8 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.container {
+  flex: 0 0 35%;
+  height: 100vh;
+  @include flex(flex-start, flex-start, column);
+}

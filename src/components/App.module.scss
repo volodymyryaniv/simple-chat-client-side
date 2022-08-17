@@ -1,0 +1,19 @@
+@import '../styles/mixins.scss';
+@import '../styles/variables.scss';
+
+.wrapper {
+  background-color: $mainBgColor;
+  .container {
+    @include flex(center, flex-start);
+    height: 100vh;
+    .dialogueContainer {
+      flex: 1 1 auto;
+      border-left: $border;
+      .emptyChat {
+        @include flex(center, center);
+        @include text( 1.5rem, 400, $lightText);
+        height: 100vh;
+      }
+    }
+  }
+}

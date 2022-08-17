@@ -1,0 +1,10 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.container {
+  @include flex(flex-start, flex-start, column);
+  height: 100vh;
+  .body {
+    flex: 1 1 auto;
+  }
+}

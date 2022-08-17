@@ -1,0 +1,28 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+
+.link {
+  text-decoration: none;
+  .container {
+    width: 100%;
+    padding: 0.3rem 0.7rem;
+    margin: 1rem 0;
+    @include flex(flex-start,flex-start);
+    .contactInfo { 
+      flex: 1 1 auto;
+      padding: 0 0.5rem;
+      h3 {
+        @include text(1rem, 400, $mediumText);
+        line-height: 1;
+      }
+      p {
+        @include text(0.8rem, 400, $lightText);
+      }
+    }
+    .date {
+      @include text(0.75rem, 400, $mediumText);
+      line-height: 1.8;
+      flex: 0 0 auto;
+    }
+  }
+}

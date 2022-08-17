@@ -1,0 +1,32 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+
+.container {
+  width: 100%;
+  padding: 1.5rem 1.3rem;
+  border-top: $border;
+  .wrapper {
+    position: relative;
+    .input {
+      width: 100%;
+      padding: 0.8rem;
+      border: $border;
+      border-radius: 0.95rem;
+      @include text(1.05rem, 400, $mediumText);
+      &::placeholder {
+        @include text(0.95rem, 400, $lightText);
+      }
+    }
+    .sendButton {
+      background-color: transparent;
+      border: none;
+      position: absolute;
+      top: calc(50% - 0.8rem);
+      right: 10px;
+      .icon{
+        width: 1.4rem;
+        cursor: pointer;
+      }
+    }
+  }
+}

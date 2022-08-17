@@ -1,0 +1,17 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+
+.container {
+  flex: 1 1 auto;
+  width: 100%;
+  background-color: $lightBgColor;
+  overflow: auto;
+  h1 {
+    @include text(1.2rem, 400, $additionalTextColor);
+    margin: 1.1em 0;
+    padding: 0.7rem;
+  }
+  .contactContainer {
+    border-bottom: $border;
+  }
+}

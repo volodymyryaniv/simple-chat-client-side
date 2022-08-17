@@ -1,0 +1,44 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+
+.toastContainer {
+  position: relative;
+  max-width: 280px;
+  margin: 0.6rem; 
+  animation: move 1s ease-out;
+  @include messageStyles($notificationColor);
+  .statusText {
+    color: $lightText;
+    margin: 0.3rem 0.3rem 0.3rem 0.6rem;
+    p {
+      margin: 0;
+      font-size: 0.8rem;
+      text-transform: capitalize;
+      &:first-child {
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+    }
+  }
+  .remove {
+    color: $lightText;
+    width: 0.75rem;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+}
+
+@keyframes move {
+  0% {
+    right: -280px;
+  }
+  100% {
+    right: 0px;
+  }
+}
