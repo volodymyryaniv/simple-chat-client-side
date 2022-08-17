@@ -16,7 +16,6 @@ function Contacts({ user, contacts, setList }) {
       localStorage.setItem('contacts', JSON.stringify(contacts));
     }
     const contactList = JSON.parse(localStorage.getItem('contacts'));
-    console.log(contactList);
     setList(contactList);
   }, []);
   return (

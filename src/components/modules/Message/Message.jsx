@@ -11,7 +11,7 @@ export default function Message({ position, message, date }) {
       <div className={styles.message}>
         <p className={`${styles.text} ${styles[position]}`}>{message}</p>
         <p className={styles.date}>
-          {dateString}, {timeString}
+          {dateString} {timeString}
         </p>
       </div>
     </article>

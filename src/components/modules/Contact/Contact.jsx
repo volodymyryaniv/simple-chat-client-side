@@ -11,8 +11,8 @@ export default function Contact({ id, name, photo, dialogue }) {
         .toDateString()
         .split(' ')
         .slice(1)
-        .join(',')
-        .replace(',', ' ')
+        .join(', ')
+        .replace(',', '')
     : '';
 
   return (
