@@ -14,6 +14,7 @@
       h3 {
         @include text(1rem, 400, $mediumText);
         line-height: 1;
+        margin-bottom: 0.2rem;
       }
       p {
         @include text(0.8rem, 400, $lightText);

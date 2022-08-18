@@ -12,6 +12,7 @@
       padding: 0.8rem;
       border: $border;
       border-radius: 0.95rem;
+      background-color: $inputColor;
       @include text(1.05rem, 400, $mediumText);
       &::placeholder {
         @include text(0.95rem, 400, $lightText);
