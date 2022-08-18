@@ -5,8 +5,16 @@
   width: 100%;
   @include flex(flex-start,center);
   gap: 10px;
-  padding: 0.7rem;
+  padding: $commonPadding;
   border-bottom: $border;
+  .icon {
+    display: none;
+    width: 2rem;
+    padding: 0.3rem;
+      @media (max-width: 587px) {
+        display: block;
+      }
+  }
   h2 {
     @include text(1.2rem, 500, $mediumText);
   }

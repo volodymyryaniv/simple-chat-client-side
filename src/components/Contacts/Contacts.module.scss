@@ -5,4 +5,8 @@
   flex: 0 0 35%;
   height: 100vh;
   @include flex(flex-start, flex-start, column);
+
+    @media (max-width: 767px) {
+      flex: 0 0 50%;
+    }
 }

@@ -5,19 +5,12 @@ import ContactsHeader from './ContactsHeader';
 import ContactsList from './ContactsList';
 import styles from './Contacts.module.scss';
 
-function Contacts({ user, contacts, setList }) {
+function Contacts({ user, contacts }) {
   const [filter, setFilter] = React.useState('');
   const filteredList = contacts.filter((contact) =>
     contact.name.toLowerCase().includes(filter.trim().toLowerCase())
   );
 
-  React.useEffect(() => {
-    if (!localStorage.getItem('contacts')) {
-      localStorage.setItem('contacts', JSON.stringify(contacts));
-    }
-    const contactList = JSON.parse(localStorage.getItem('contacts'));
-    setList(contactList);
-  }, []);
   return (
     <div className={styles.container}>
       <ContactsHeader src={user.photo} filter={filter} setFilter={setFilter} />
@@ -31,10 +24,5 @@ const mapStateToProps = (state) => {
     contacts: state.contactsReducer.contacts,
   };
 };
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setList: (list) => dispatch(setList(list)),
-  };
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Contacts);
+export default connect(mapStateToProps)(Contacts);

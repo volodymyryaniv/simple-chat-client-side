@@ -8,8 +8,8 @@
   overflow: auto;
   h1 {
     @include text(1.2rem, 400, $additionalTextColor);
-    margin: 1.1em 0;
-    padding: 0.7rem;
+    margin: 1.1rem 0;
+    padding: 0.9rem $commonPadding 1.8rem;
   }
   .contactContainer {
     border-bottom: $border;
