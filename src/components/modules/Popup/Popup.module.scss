@@ -9,17 +9,23 @@
   bottom: 0;
   background-color: $popupWrapper;
   @include flex(center,center);
-  .container{
+  .container {
     @include flex(center,center,column);
     background-color: $mainBgColor;
     padding: 5rem;
     overflow: auto;
-    .button{
+    .button {
       width: 100%;
       padding: 0.5rem;
       margin-top: 0.4rem;
       @include text(1.1rem, 700, $partnerMsgBgColor);
       cursor: pointer;
+      transition: all 0.3s ease-out;
+      &:hover {
+        background-color: $partnerMsgBgColor;
+        color: $lightBgColor;
+        transition: all 0.3s ease-in;
+      }
     }
   }
 }
