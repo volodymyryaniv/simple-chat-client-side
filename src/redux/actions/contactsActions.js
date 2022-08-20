@@ -59,7 +59,7 @@ export const sendAnswer = (id, name, src) => async (dispatch, getState) => {
       );
       const updatedContacts = getState().contactsReducer.contacts;
       localStorage.setItem('contacts', JSON.stringify(updatedContacts));
-    }, 5000);
+    }, 10000);
   } catch (error) {
     console.log(error);
   }

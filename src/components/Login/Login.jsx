@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { GoogleLogin } from '@react-oauth/google';
 import jwt_decode from 'jwt-decode';
 import { login } from '../../redux/actions/userActions';
 import styles from './Login.module.scss';
@@ -11,20 +12,14 @@ function Login({ login }) {
     login(name, picture, credential);
   };
 
-  React.useEffect(() => {
-    google.accounts.id.initialize({
-      client_id:
-        '281123684298-umemc1jmu4a1r04j7hfdcvjki9796553.apps.googleusercontent.com',
-      callback: handleCredentialResponse,
-    });
-
-    google.accounts.id.renderButton(document.querySelector('#login-button'), {
-      theme: 'outline',
-      size: 'large',
-    });
-  }, []);
-
-  return <div id="login-button"></div>;
+  return (
+    <GoogleLogin
+      onSuccess={handleCredentialResponse}
+      onError={() => {
+        console.log('Login Failed');
+      }}
+    />
+  );
 }
 
 const mapDispatchToProps = (dispatch) => {

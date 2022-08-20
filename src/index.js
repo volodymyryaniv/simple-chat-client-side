@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 import {Provider} from 'react-redux';
 import store from './redux/store';
 import './index.css';
@@ -9,11 +10,13 @@ import App from './components';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter >
-        <App />
-      </BrowserRouter>
-    </Provider>
+     <GoogleOAuthProvider clientId="281123684298-umemc1jmu4a1r04j7hfdcvjki9796553.apps.googleusercontent.com">
+      <Provider store={store}>
+        <BrowserRouter >
+          <App />
+        </BrowserRouter>
+      </Provider>
+    </GoogleOAuthProvider>
   </React.StrictMode>
 );
 
