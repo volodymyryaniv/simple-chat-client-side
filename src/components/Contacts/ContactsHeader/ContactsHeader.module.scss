@@ -6,6 +6,26 @@
   width: 100%;
   padding: $commonPadding;
   border-bottom: $border;
+  .userContainer{
+    width: 100%;
+    @include flex(space-between,center);
+    .name{
+      @include text(1.1rem,700,$mediumText);
+      flex: 1 1 auto;
+      justify-self: flex-start;
+      padding: 0.5rem;
+      margin-left: 1rem;
+    }
+    .button{
+      @include text(0.8rem,900,$additionalTextColor);
+      flex: 0 0 auto;
+      background-color: $lightBgColor;
+      border: $border;
+      border-radius: 0.7rem;
+      padding: 0.3rem;
+      cursor: pointer;
+    }
+  }
   .filterContainer {
     position: relative;
     margin-top: 1.25rem;

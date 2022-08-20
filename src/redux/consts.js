@@ -9,6 +9,10 @@ const ADDTOAST = 'addToast';
 const REMOVETOAST = 'removeToast';
 const SETAUTOCLOSE = 'setAutoClose';
 
+const LOGIN = 'login';
+const LOGOUT = 'logout';
+const SETPOPUP = 'setPopup';
+
 export default {
   GETLIST,
   SETLIST,
@@ -18,4 +22,7 @@ export default {
   ADDTOAST,
   REMOVETOAST,
   SETAUTOCLOSE,
-}
+  LOGIN,
+  LOGOUT,
+  SETPOPUP,
+};
