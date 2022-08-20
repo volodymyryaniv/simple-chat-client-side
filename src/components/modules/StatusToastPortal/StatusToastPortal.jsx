@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { v4 } from 'uuid';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeToast } from '../../../redux/actions/toastActions';
 import StatusToast from '../StatusToast/StatusToast';
@@ -11,7 +10,7 @@ const StatusToastPortal = () => {
   const dispatch = useDispatch();
   const [removeId, setRemoveId] = React.useState('');
   const [loaded, setLoaded] = React.useState(false);
-  const [portalId] = React.useState(`toast-portal-${v4()}}`);
+  const [portalId] = React.useState(`toast-portal-${React.useId()}}`);
 
   React.useEffect(() => {
     const element = document.createElement('div');

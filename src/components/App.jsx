@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useResizeWidth } from '../hooks/useResizeWidth';
 import { setList } from '../redux/actions/contactsActions';
+import { login } from '../redux/actions/userActions';
 import { useSelector, useDispatch } from 'react-redux';
 import Contacts from './Contacts';
 import Dialogue from './Dialogue';
@@ -16,6 +17,12 @@ export default function App() {
   React.useEffect(() => {
     if (!localStorage.getItem('contacts')) {
       localStorage.setItem('contacts', JSON.stringify(contacts));
+    }
+    if (localStorage.getItem('user')) {
+      const { name, picture, credential } = JSON.parse(
+        localStorage.getItem('user')
+      );
+      dispatch(login(name, picture, credential));
     }
     const contactList = JSON.parse(localStorage.getItem('contacts'));
     dispatch(setList(contactList));
