@@ -5,8 +5,14 @@ import UserPhoto from '../../modules/UserPhoto/UserPhoto';
 import styles from './DialogueBody.module.scss';
 
 function DialogueBody({ src, dialogue }) {
+  const dialogueRef = React.useRef()
+
+  React.useEffect(() => {
+    dialogueRef.current.scrollTo(0,window.innerHeight);
+  },[dialogue])
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={dialogueRef}>
       {dialogue &&
         dialogue.map((message) => {
           return message.sender === 'user' ? (
